@@ -15,7 +15,7 @@ class file_D(QtWidgets.QMainWindow,Ui_MainWindow):
     def show_result(self):
         filename,_= QFileDialog.getOpenFileName(self,'openfile',r"C:\Users\sch\Documents\python\QT_projects\breast_cancer1\images",'All file(*.*);;Image files (*.jpg *.png)')
         self.img_lbl.setPixmap(QPixmap(filename))
-        model = load_model("best_model.hdf5")
+        model = load_model("X-ray_model.hdf5")
         image = cv2.imread(filename,cv2.IMREAD_GRAYSCALE)
         image = cv2.resize(image, (100,100))
         images = image.reshape(-1,100,100,1)
